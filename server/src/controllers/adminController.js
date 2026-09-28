@@ -504,7 +504,7 @@ const getStudentList = async (req, res, next) => {
        JOIN users u ON s.user_id = u.id
        LEFT JOIN tokens t ON s.id = t.student_id
        GROUP BY s.id
-       ORDER BY u.name ASC`
+       ORDER BY u.college_id ASC`
     );
     res.json({ success: true, students: rows });
   } catch (error) {

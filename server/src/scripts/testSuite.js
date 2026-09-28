@@ -27,9 +27,9 @@ async function runTestSuite() {
     const healthRes = await axios.get(`${BASE_URL}/health`);
     assert(healthRes.data?.status === 'ok', 'API Health Check returns ok');
 
-    // Test 2: Student Login
+    // Test 2: Student Login with BCREC College ID
     const stuLoginRes = await axios.post(`${BASE_URL}/auth/login`, {
-      identifier: 'student@cqms.edu',
+      identifier: 'BCREC-2024-001',
       password: 'student123'
     });
     const stuToken = stuLoginRes.data.token;

@@ -75,23 +75,51 @@ async function runSeed() {
         role: 'FEES_STAFF'
       },
       {
-        college_id: 'STU-2024-001',
+        college_id: 'BCREC-2024-001',
         name: 'Soumyadip Kar',
         email: 'student@cqms.edu',
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       },
       {
-        college_id: 'STU-2024-002',
+        college_id: 'BCREC-2024-002',
         name: 'Ananya Sen',
         email: 'student2@cqms.edu',
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       },
       {
-        college_id: 'STU-2024-003',
+        college_id: 'BCREC-2024-003',
         name: 'Rohan Mukherjee',
         email: 'student3@cqms.edu',
+        password_hash: defaultPasswordHash,
+        role: 'STUDENT'
+      },
+      {
+        college_id: 'BCREC-2024-004',
+        name: 'Souptik Das',
+        email: 'bcrec-2024-004.pending@cqms.edu',
+        password_hash: defaultPasswordHash,
+        role: 'STUDENT'
+      },
+      {
+        college_id: 'BCREC-2024-005',
+        name: 'Subhajeet Gorai',
+        email: 'bcrec-2024-005.pending@cqms.edu',
+        password_hash: defaultPasswordHash,
+        role: 'STUDENT'
+      },
+      {
+        college_id: 'BCREC-2024-006',
+        name: 'Shankar Gorain',
+        email: 'bcrec-2024-006.pending@cqms.edu',
+        password_hash: defaultPasswordHash,
+        role: 'STUDENT'
+      },
+      {
+        college_id: 'BCREC-2024-007',
+        name: 'Srijan Mondal',
+        email: 'bcrec-2024-007.pending@cqms.edu',
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       }
@@ -110,25 +138,32 @@ async function runSeed() {
     // 4. Create Students profile
     const [studentUsers] = await connection.query(`SELECT id, college_id FROM users WHERE role = 'STUDENT'`);
     for (const stu of studentUsers) {
-      if (stu.college_id === 'STU-2024-001') {
+      if (stu.college_id === 'BCREC-2024-001') {
         await connection.query(
           `INSERT INTO students (user_id, course, semester, year)
-           VALUES (?, 'B.Tech Computer Science & Engineering', '6th Semester', 3)
+           VALUES (?, 'B.Tech Computer Science & Engineering', '5th Semester', 3)
            ON DUPLICATE KEY UPDATE course=VALUES(course), semester=VALUES(semester), year=VALUES(year)`,
           [stu.id]
         );
-      } else if (stu.college_id === 'STU-2024-002') {
+      } else if (stu.college_id === 'BCREC-2024-002') {
         await connection.query(
           `INSERT INTO students (user_id, course, semester, year)
-           VALUES (?, 'B.Tech Information Technology', '4th Semester', 2)
+           VALUES (?, 'B.Tech Information Technology', '5th Semester', 3)
+           ON DUPLICATE KEY UPDATE course=VALUES(course), semester=VALUES(semester), year=VALUES(year)`,
+          [stu.id]
+        );
+      } else if (stu.college_id === 'BCREC-2024-003') {
+        await connection.query(
+          `INSERT INTO students (user_id, course, semester, year)
+           VALUES (?, 'B.Tech Electronics & Communication', '5th Semester', 3)
            ON DUPLICATE KEY UPDATE course=VALUES(course), semester=VALUES(semester), year=VALUES(year)`,
           [stu.id]
         );
       } else {
         await connection.query(
           `INSERT INTO students (user_id, course, semester, year)
-           VALUES (?, 'B.Tech Electronics & Comm.', '6th Semester', 3)
-           ON DUPLICATE KEY UPDATE course=VALUES(course), semester=VALUES(semester), year=VALUES(year)`,
+           VALUES (?, NULL, '5th Semester', 3)
+           ON DUPLICATE KEY UPDATE semester=VALUES(semester), year=VALUES(year)`,
           [stu.id]
         );
       }

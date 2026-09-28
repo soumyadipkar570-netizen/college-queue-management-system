@@ -135,7 +135,9 @@ const StudentDashboard = () => {
                 Welcome, {user?.name || 'Student'}
               </h1>
               <p className="mt-1 text-sm text-blue-100 max-w-xl">
-                {user?.course || 'Degree Program'} ({user?.semester || 'Semester'})
+                {user?.course && user?.course !== 'Pending / Not Specified'
+                  ? `${user.course} (${user.semester || '5th Semester'})`
+                  : `3rd Year / ${user?.semester || '5th Semester'}`}
               </p>
             </div>
             <button

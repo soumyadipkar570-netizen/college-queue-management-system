@@ -8,7 +8,7 @@ const PERSONAS = [
     role: 'STUDENT',
     title: 'Demo Student',
     name: 'Soumyadip Kar',
-    email: 'student@cqms.edu',
+    email: 'BCREC-2024-001',
     pass: 'student123',
     icon: User,
     color: 'hover:border-blue-400 hover:bg-blue-50/50',

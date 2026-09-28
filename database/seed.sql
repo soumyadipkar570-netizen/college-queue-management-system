@@ -67,3 +67,26 @@ INSERT INTO system_settings (setting_key, setting_value, description) VALUES
 ('operating_hours_start', '09:00', 'College office queue opening time'),
 ('operating_hours_end', '17:00', 'College office queue closing time')
 ON DUPLICATE KEY UPDATE setting_value=VALUES(setting_value), description=VALUES(description);
+
+-- --------------------------------------------------------------------
+-- Registered Students (3rd Year, 5th Semester, BCREC format)
+-- --------------------------------------------------------------------
+INSERT INTO users (id, college_id, name, email, password_hash, role) VALUES
+(4, 'BCREC-2024-001', 'Soumyadip Kar', 'student@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT'),
+(5, 'BCREC-2024-002', 'Ananya Sen', 'student2@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT'),
+(6, 'BCREC-2024-003', 'Rohan Mukherjee', 'student3@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT'),
+(7, 'BCREC-2024-004', 'Souptik Das', 'bcrec-2024-004.pending@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT'),
+(8, 'BCREC-2024-005', 'Subhajeet Gorai', 'bcrec-2024-005.pending@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT'),
+(9, 'BCREC-2024-006', 'Shankar Gorain', 'bcrec-2024-006.pending@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT'),
+(10, 'BCREC-2024-007', 'Srijan Mondal', 'bcrec-2024-007.pending@cqms.edu', '$2a$10$9Gv1p34z8sT/44kR9e6o.e3i27Yv5p.M3BvW8rV4P9L5V0q.R5O7S', 'STUDENT')
+ON DUPLICATE KEY UPDATE college_id=VALUES(college_id), name=VALUES(name);
+
+INSERT INTO students (user_id, course, semester, year) VALUES
+(4, 'B.Tech Computer Science & Engineering', '5th Semester', 3),
+(5, 'B.Tech Information Technology', '5th Semester', 3),
+(6, 'B.Tech Electronics & Communication', '5th Semester', 3),
+(7, NULL, '5th Semester', 3),
+(8, NULL, '5th Semester', 3),
+(9, NULL, '5th Semester', 3),
+(10, NULL, '5th Semester', 3)
+ON DUPLICATE KEY UPDATE course=VALUES(course), semester=VALUES(semester), year=VALUES(year);

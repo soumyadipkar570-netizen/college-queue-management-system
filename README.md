@@ -27,13 +27,18 @@ The **College Queue Management System (CQMS)** replaces congested physical lines
 
 ## 3. Demo Credentials (For Evaluation & Viva)
 
-| Persona | Role | Email / Login ID | Password | College / Employee ID |
-| :--- | :--- | :--- | :--- | :--- |
-| **Demo Student 1** | `STUDENT` | `student@cqms.edu` | `student123` | `STU-2024-001` (Soumyadip Kar) |
-| **Demo Student 2** | `STUDENT` | `student2@cqms.edu` | `student123` | `STU-2024-002` (Ananya Sen) |
-| **Library Staff** | `LIBRARY_STAFF` | `library@cqms.edu` | `library123` | `LIB-STAFF-01` (Rajesh Sharma) |
-| **Fees Staff** | `FEES_STAFF` | `fees@cqms.edu` | `fees123` | `FEE-STAFF-01` (Priya Patel) |
-| **System Admin** | `ADMIN` | `admin@cqms.edu` | `admin123` | `ADM-001` (Dr. Amit Roy) |
+| Persona | Role | Email / Login ID | Password | College / Employee ID | Program / Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Demo Student 1** | `STUDENT` | `BCREC-2024-001` or `student@cqms.edu` | `student123` | `BCREC-2024-001` (Soumyadip Kar) | B.Tech CSE (3rd Yr / 5th Sem) |
+| **Demo Student 2** | `STUDENT` | `BCREC-2024-002` or `student2@cqms.edu` | `student123` | `BCREC-2024-002` (Ananya Sen) | B.Tech IT (3rd Yr / 5th Sem) |
+| **Demo Student 3** | `STUDENT` | `BCREC-2024-003` or `student3@cqms.edu` | `student123` | `BCREC-2024-003` (Rohan Mukherjee) | B.Tech ECE (3rd Yr / 5th Sem) |
+| **Student 4** | `STUDENT` | `BCREC-2024-004` | `student123` | `BCREC-2024-004` (Souptik Das) | 3rd Year / 5th Sem (Pending Data) |
+| **Student 5** | `STUDENT` | `BCREC-2024-005` | `student123` | `BCREC-2024-005` (Subhajeet Gorai) | 3rd Year / 5th Sem (Pending Data) |
+| **Student 6** | `STUDENT` | `BCREC-2024-006` | `student123` | `BCREC-2024-006` (Shankar Gorain) | 3rd Year / 5th Sem (Pending Data) |
+| **Student 7** | `STUDENT` | `BCREC-2024-007` | `student123` | `BCREC-2024-007` (Srijan Mondal) | 3rd Year / 5th Sem (Pending Data) |
+| **Library Staff** | `LIBRARY_STAFF` | `library@cqms.edu` | `library123` | `LIB-STAFF-01` (Rajesh Sharma) | Library Counter 1 |
+| **Fees Staff** | `FEES_STAFF` | `fees@cqms.edu` | `fees123` | `FEE-STAFF-01` (Priya Patel) | Fees Counter 1 |
+| **System Admin** | `ADMIN` | `admin@cqms.edu` | `admin123` | `ADM-001` (Dr. Amit Roy) | Full Admin Console |
 
 *The login page also features a **Quick Persona Switcher** for one-click fast login during presentations.*
 

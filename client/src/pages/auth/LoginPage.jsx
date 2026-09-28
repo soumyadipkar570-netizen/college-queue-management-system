@@ -5,7 +5,7 @@ import QuickPersonaSwitcher from '../../components/common/QuickPersonaSwitcher';
 import { Building2, KeyRound, Mail, ArrowRight, ShieldCheck, Info } from 'lucide-react';
 
 const LoginPage = () => {
-  const [identifier, setIdentifier] = useState('student@cqms.edu');
+  const [identifier, setIdentifier] = useState('BCREC-2024-001');
   const [password, setPassword] = useState('student123');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -82,7 +82,7 @@ const LoginPage = () => {
                   required
                   value={identifier}
                   onChange={(e) => setIdentifier(e.target.value)}
-                  placeholder="e.g. student@cqms.edu or STU-2024-001"
+                  placeholder="e.g. BCREC-2024-001 or student@cqms.edu"
                   className="block w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm transition"
                 />
               </div>
@@ -136,7 +136,7 @@ const LoginPage = () => {
             <span>Default Test Credentials</span>
           </div>
           <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-[11px]">
-            <div><strong>Student:</strong> student@cqms.edu / student123</div>
+            <div><strong>Student:</strong> BCREC-2024-001 / student123</div>
             <div><strong>Library Staff:</strong> library@cqms.edu / library123</div>
             <div><strong>Fees Staff:</strong> fees@cqms.edu / fees123</div>
             <div><strong>Admin:</strong> admin@cqms.edu / admin123</div>
