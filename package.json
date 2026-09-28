@@ -1,0 +1,14 @@
+{
+  "name": "college-queue-management-system",
+  "version": "1.0.0",
+  "description": "College Queue Management System (CQMS) for Library and Fees Payment Office",
+  "private": true,
+  "scripts": {
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client dev",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start"
+  }
+}
