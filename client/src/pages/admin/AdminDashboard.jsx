@@ -852,26 +852,11 @@ const AdminDashboard = () => {
                         <td className="py-2.5 px-3 font-mono font-bold text-slate-800">{stu.college_id}</td>
                         <td className="py-2.5 px-3 font-bold text-slate-900">{stu.name}</td>
                         <td className="py-2.5 px-3 text-slate-600">
-                          {stu.email && stu.email.includes('pending') ? (
-                            <span className="inline-flex items-center text-slate-400 italic text-[11px]">
-                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mr-1.5"></span>
-                              Pending Data
-                            </span>
-                          ) : (
-                            stu.email
-                          )}
+                          {stu.email ? stu.email : '—'}
                         </td>
                         <td className="py-2.5 px-3 text-slate-700">
-                          {stu.course && stu.course !== 'Pending / Not Specified' ? (
-                            <div>
-                              <div className="font-medium text-slate-900">{stu.course}</div>
-                              <div className="text-[11px] text-slate-500">({stu.semester || '5th Semester'})</div>
-                            </div>
-                          ) : (
-                            <div className="font-medium text-slate-800">
-                              3rd Year / {stu.semester || '5th Semester'}
-                            </div>
-                          )}
+                          <div className="font-medium text-slate-900">{stu.course || '—'}</div>
+                          <div className="text-[11px] text-slate-500">({stu.semester || '5th Semester'})</div>
                         </td>
                         <td className="py-2.5 px-3 font-bold text-blue-700">{stu.total_tokens_issued}</td>
                       </tr>

@@ -154,6 +154,17 @@ async function runTestSuite() {
       'Admin CSV report export generated successfully'
     );
 
+    // Test 18: Admin Registered Students List (BCREC IDs, 5th Semester, correct courses)
+    const stuListRes = await axios.get(`${BASE_URL}/admin/students`, adminHeaders);
+    const students = stuListRes.data.students || [];
+    const all5thSem = students.length === 7 && students.every(s => s.semester === '5th Semester' && s.year === 3);
+    const souptik = students.find(s => s.college_id === 'BCREC-2024-004');
+    const cseMatch = souptik && souptik.course === 'B.Tech Computer Science & Engineering' && souptik.email === null;
+    assert(
+      all5thSem && cseMatch,
+      `All 7 students verified in Admin API: 3rd Year / 5th Semester with BCREC College IDs and B.Tech CSE for new students`
+    );
+
     console.log('\n====================================================');
     console.log(`TEST SUITE RESULTS: ${passed} PASSED, ${failed} FAILED`);
     console.log('====================================================\n');

@@ -101,37 +101,37 @@ async function updateStudentData() {
       console.log('✓ Rohan Mukherjee updated to BCREC-2024-003, 3rd Year / 5th Semester.');
     }
 
-    // 4. Add the 4 new students (Check duplicates before insertion)
+    // 4. Add or update the 4 students
     const newStudents = [
       {
         collegeId: 'BCREC-2024-004',
         name: 'Souptik Das',
-        email: 'bcrec-2024-004.pending@cqms.edu',
-        course: null, // Pending / Not Specified
+        email: null,
+        course: 'B.Tech Computer Science & Engineering',
         semester: '5th Semester',
         year: 3
       },
       {
         collegeId: 'BCREC-2024-005',
         name: 'Subhajeet Gorai',
-        email: 'bcrec-2024-005.pending@cqms.edu',
-        course: null, // Pending / Not Specified
+        email: null,
+        course: 'B.Tech Computer Science & Engineering',
         semester: '5th Semester',
         year: 3
       },
       {
         collegeId: 'BCREC-2024-006',
         name: 'Shankar Gorain',
-        email: 'bcrec-2024-006.pending@cqms.edu',
-        course: null, // Pending / Not Specified
+        email: null,
+        course: 'B.Tech Computer Science & Engineering',
         semester: '5th Semester',
         year: 3
       },
       {
         collegeId: 'BCREC-2024-007',
         name: 'Srijan Mondal',
-        email: 'bcrec-2024-007.pending@cqms.edu',
-        course: null, // Pending / Not Specified
+        email: null,
+        course: 'B.Tech Computer Science & Engineering',
         semester: '5th Semester',
         year: 3
       }
@@ -164,8 +164,8 @@ async function updateStudentData() {
       } else {
         console.log(`Student ${ns.name} (${ns.collegeId}) already exists (user_id: ${existing[0].id}). Updating details...`);
         await connection.query(
-          `UPDATE users SET college_id = ?, name = ? WHERE id = ?`,
-          [ns.collegeId, ns.name, existing[0].id]
+          `UPDATE users SET college_id = ?, name = ?, email = ? WHERE id = ?`,
+          [ns.collegeId, ns.name, ns.email, existing[0].id]
         );
         await connection.query(
           `UPDATE students SET semester = '5th Semester', year = 3, course = ? WHERE user_id = ?`,

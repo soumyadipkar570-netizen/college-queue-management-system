@@ -98,28 +98,28 @@ async function runSeed() {
       {
         college_id: 'BCREC-2024-004',
         name: 'Souptik Das',
-        email: 'bcrec-2024-004.pending@cqms.edu',
+        email: null,
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       },
       {
         college_id: 'BCREC-2024-005',
         name: 'Subhajeet Gorai',
-        email: 'bcrec-2024-005.pending@cqms.edu',
+        email: null,
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       },
       {
         college_id: 'BCREC-2024-006',
         name: 'Shankar Gorain',
-        email: 'bcrec-2024-006.pending@cqms.edu',
+        email: null,
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       },
       {
         college_id: 'BCREC-2024-007',
         name: 'Srijan Mondal',
-        email: 'bcrec-2024-007.pending@cqms.edu',
+        email: null,
         password_hash: defaultPasswordHash,
         role: 'STUDENT'
       }
@@ -129,7 +129,7 @@ async function runSeed() {
       await connection.query(
         `INSERT INTO users (college_id, name, email, password_hash, role)
          VALUES (?, ?, ?, ?, ?)
-         ON DUPLICATE KEY UPDATE name=VALUES(name), password_hash=VALUES(password_hash), role=VALUES(role)`,
+         ON DUPLICATE KEY UPDATE name=VALUES(name), email=VALUES(email), password_hash=VALUES(password_hash), role=VALUES(role)`,
         [u.college_id, u.name, u.email, u.password_hash, u.role]
       );
     }
@@ -162,8 +162,8 @@ async function runSeed() {
       } else {
         await connection.query(
           `INSERT INTO students (user_id, course, semester, year)
-           VALUES (?, NULL, '5th Semester', 3)
-           ON DUPLICATE KEY UPDATE semester=VALUES(semester), year=VALUES(year)`,
+           VALUES (?, 'B.Tech Computer Science & Engineering', '5th Semester', 3)
+           ON DUPLICATE KEY UPDATE course=VALUES(course), semester=VALUES(semester), year=VALUES(year)`,
           [stu.id]
         );
       }
